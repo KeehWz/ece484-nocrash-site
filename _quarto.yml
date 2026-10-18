@@ -3,16 +3,21 @@ project:
   output-dir: docs
 
 website:
-  title: "Project Title"
+  title: "NoCrash · F1TENTH"
   navbar:
     background: light
     left:
-      - text: "More Research"
-        menu:
-          - text: "Project 1"
-            href: https://example.com
-          - text: "Project 2"
-            href: https://example.com
+      - text: "Approach"
+        href: index.html#approach
+      - text: "Progress"
+        href: index.html#progress
+      - text: "Plan"
+        href: index.html#plan
+      - text: "Team"
+        href: index.html#team
+    right:
+      - text: "ECE 484"
+        href: https://safeautonomy-illinois.github.io/ece484-site/fall-2026/projects/f1tenth/
 
 format:
   html:

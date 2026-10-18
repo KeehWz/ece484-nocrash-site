@@ -132,7 +132,8 @@ body {
 }
 
 /* ---------- Section Titles ---------- */
-.section-title {
+/* Quarto copies heading classes onto the wrapping <section>; style only the h2 */
+h2.section-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--color-heading);
@@ -297,7 +298,7 @@ body {
   .hero-section .title {
     font-size: 1.8rem;
   }
-  .section-title {
+  h2.section-title {
     font-size: 1.4rem;
   }
   .button-row {
@@ -324,4 +325,109 @@ figure figcaption {
   color: var(--color-text-muted);
   text-align: center;
   margin-top: 0.4rem;
+}
+
+/* ==========================================================================
+   Team NoCrash additions
+   ========================================================================== */
+
+/* Teaser diagram: no shadow box around a white-background SVG */
+.hero-teaser .teaser-img {
+  box-shadow: none;
+  border: 1px solid var(--color-border);
+}
+
+/* Tables (Approach, Plan) */
+.content-text table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 1.5rem;
+  text-align: left;
+}
+.content-text th {
+  background: var(--color-section-alt);
+  font-weight: 600;
+  border-bottom: 2px solid var(--color-border);
+  padding: 0.55rem 0.7rem;
+}
+.content-text td {
+  border-bottom: 1px solid var(--color-border);
+  padding: 0.55rem 0.7rem;
+  vertical-align: top;
+}
+.content-text code {
+  font-size: 0.85em;
+  color: #3451c7;
+  background: #f0f3ff;
+  padding: 0.05rem 0.3rem;
+  border-radius: 4px;
+}
+
+/* Video cards (Preliminary Work) */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.video-card {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.video-card .quarto-video,
+.video-card video,
+.video-card iframe {
+  width: 100%;
+  border-radius: 8px;
+}
+.video-placeholder {
+  aspect-ratio: 16 / 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-section-alt);
+  border: 1px dashed var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Team cards */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  max-width: 860px;
+  margin: 0 auto 1rem;
+}
+.team-card {
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.team-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.4rem;
+  color: var(--color-heading);
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .content-text table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* Keep display math from widening the page on phones */
+.content-text mjx-container[display="true"] {
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
 }
